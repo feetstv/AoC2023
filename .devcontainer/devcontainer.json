@@ -1,0 +1,58 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.mypy-type-checker",
+                "charliermarsh.ruff",
+                "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github",
+                "yzhang.markdown-all-in-one",
+                "hediet.vscode-drawio",
+                "oderwat.indent-rainbow",
+                "usernamehw.errorlens",
+                "aaron-bond.better-comments",
+                "almenon.arepl"
+            ],
+            "settings": {
+                "AREPL.telemetry": false,
+                "AREPL.skipLandingPage": true,
+                "AREPL.showFooter": false,
+                "editor.wordWrap": "on",
+                "editor.fontSize": 16,
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "charliermarsh.ruff",
+                "editor.formatOnSaveMode": "modificationsIfAvailable",
+                "editor.formatOnType": true,
+                "editor.rulers": [
+                    80
+                ],
+                "editor.tokenColorCustomizations": {
+                    "textMateRules": [
+                        {
+                            "scope": "string.quoted.docstring.multi.python",
+                            "settings": {
+                                "fontStyle": "italic"
+                            }
+                        },
+                        {
+                            "scope": "comment",
+                            "settings": {
+                                "fontStyle": "italic"
+                            }
+                        }
+                    ]
+                },
+                "gitlens.showWhatsNewAfterUpgrades": false,
+                "gitlens.showWelcomeOnInstall": false,
+                "pip-manager.source": "pypi",
+                "python.pythonPath": "/usr/local/bin/python",
+                "workbench.colorTheme": "Default Light Modern"
+            }
+        }
+    },
+    "postCreateCommand": "python3 -m pip install -r requirements.txt",
+    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'"
+}
